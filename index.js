@@ -164,7 +164,7 @@ async function run() {
 
 
 
-        app.post('/doctor', verifyJWT, verifyAdmin, async (req, res) => {
+        app.post('/doctor', verifyJWT, async (req, res) => {
             const doctor = req.body;
             const result = await doctorsCollection.insertOne(doctor);
             res.send(result);
